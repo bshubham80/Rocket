@@ -1,2 +1,0 @@
-# Rocket
-Practice RN Repo
