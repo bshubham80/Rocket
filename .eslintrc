@@ -1,0 +1,64 @@
+{
+  "env": {
+    "node": true,
+    "browser": true,
+    "es6": true
+  },
+  "parser": "babel-eslint",
+  "extends": [
+    "airbnb",
+    "prettier",
+    "prettier/react",
+    "plugin:react/recommended",
+    "plugin:react-redux/recommended"
+  ],
+  "rules": {
+    "camelcase": 0,
+    "import/no-extraneous-dependencies": 0,
+    "no-param-reassign": 0,
+    "react/forbid-foreign-prop-types": 0,
+    "import/no-named-as-default": 0,
+    "import/no-unresolved": 0,
+    "react/prefer-stateless-function": 0,
+    "react/display-name": 0,
+    "no-multiple-empty-lines": 2,
+    "react-redux/prefer-separate-component-file": 0,
+    "react/forbid-prop-types": 0,
+    "react/prop-types": 0,
+    "no-underscore-dangle": 0,
+    "react/no-multi-comp": 0,
+    "react/destructuring-assignment": [
+      0,
+      1
+    ],
+    "react/no-array-index-key": 0,
+    "no-plusplus": 0,
+    "no-console": 0,
+    "no-prototype-builtins": 0,
+    "react/jsx-filename-extension": [
+      1,
+      {
+        "extensions": [
+          ".js",
+          ".jsx"
+        ]
+      }
+    ],
+    "prettier/prettier": [
+      "error",
+      {
+        "trailingComma": "es5",
+        "singleQuote": true,
+        "printWidth": 100
+      }
+    ]
+  },
+  "plugins": [
+    "prettier",
+    "react",
+    "react-redux"
+  ],
+  "globals": {
+    "__DEV__": false
+  }
+}
