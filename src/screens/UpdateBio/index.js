@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, StyleSheet, AsyncStorage } from 'react-native';
+import { View, StyleSheet, AsyncStorage, Image, TouchableOpacity } from 'react-native';
 import { connect } from 'react-redux';
 
 import { TextField } from 'react-native-material-textfield';
@@ -21,6 +21,14 @@ const styles = StyleSheet.create({
     position: 'absolute',
     bottom: 0,
   },
+  backContainer: {
+    flexDirection: 'row',
+  },
+  backArrow: {
+    width: 14,
+    height: 14,
+    marginBottom: 29,
+  },
 });
 
 class UpdateBio extends Component {
@@ -35,7 +43,7 @@ class UpdateBio extends Component {
     const { navigation } = this.props;
 
     const value = navigation.getParam('value', '');
-    this.setState({ value });
+    this.setState({ value: value || '' });
   };
 
   _handleClick = () => {
@@ -46,14 +54,19 @@ class UpdateBio extends Component {
     if (updateItem === 1) {
       AsyncStorage.setItem(storageKeys.key_first_name, value, () => {
         setFN(value);
-        navigation.goBack();
+        this._back();
       });
     } else {
       AsyncStorage.setItem(storageKeys.key_last_name, value, () => {
         setLN(value);
-        navigation.goBack();
+        this._back();
       });
     }
+  };
+
+  _back = () => {
+    const { navigation } = this.props;
+    navigation.goBack();
   };
 
   render() {
@@ -64,6 +77,11 @@ class UpdateBio extends Component {
     return (
       <View style={styles.wrapper}>
         <View style={styles.formContainer}>
+          <View stlye={styles.backContainer}>
+            <TouchableOpacity activeOpacity={1} onPress={this._back}>
+              <Image source={{ uri: 'arrow_back' }} style={styles.backArrow} />
+            </TouchableOpacity>
+          </View>
           <Heading>Update your Name</Heading>
           <TextField
             label={label}

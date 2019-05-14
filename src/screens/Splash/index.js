@@ -48,7 +48,7 @@ class Splash extends Component {
       setLN(lastName);
 
       navigate(!firstLaunch ? 'Introduction' : 'App');
-    }, 1000);
+    }, 3000);
   };
 
   render() {

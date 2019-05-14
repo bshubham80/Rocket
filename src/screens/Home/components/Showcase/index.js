@@ -27,6 +27,7 @@ const style = StyleSheet.create({
     textAlign: 'center',
     color: '#ffffff',
     marginTop: 6,
+    opacity: 0.5,
   },
   buttonContaier: {
     flexDirection: 'row',
