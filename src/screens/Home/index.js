@@ -1,6 +1,15 @@
 import React, { Component } from 'react';
-import { View, Text, Button } from 'react-native';
+import { View, StyleSheet, ScrollView } from 'react-native';
+import * as data from './data.json';
+import Showcase from './components/Showcase';
+import Teaser from './components/Teaser';
 
+const style = StyleSheet.create({
+  wrapper: {
+    flex: 1,
+    backgroundColor: '#000000',
+  },
+});
 class Home extends Component {
   constructor(props) {
     super(props);
@@ -8,17 +17,14 @@ class Home extends Component {
   }
 
   render() {
+    const teasers = data.teasers.map((item, index) => <Teaser key={index} item={item} />);
     return (
-      <View>
-        <Text>Home textInComponent </Text>
-        <Button
-          title="Watch Trailer"
-          onPress={() => {
-            const { navigation } = this.props;
-            navigation.navigate('Bio');
-          }}
-        />
-      </View>
+      <ScrollView>
+        <View style={style.wrapper}>
+          <Showcase data={data.promo} />
+          {teasers}
+        </View>
+      </ScrollView>
     );
   }
 }

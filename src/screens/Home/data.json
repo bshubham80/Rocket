@@ -1,0 +1,21 @@
+{
+    "promo": {
+        "banner": "group_8",
+        "name": "Tangled",
+        "desc": "2010 • 7+ • 1h 40m"
+    },
+    "teasers": [
+        {
+            "number": "Teaser 1",
+            "banner": "group_10",
+            "title": "Tangled - I See the Light (HD)",
+            "desc": "Archiebuild • 6m+ Views • 7 years ago"
+        },
+        {
+            "number": "Teaser 2",
+            "banner": "bitmap",
+            "title": "Tangled - I See the Light (HD)",
+            "desc": "Archiebuild • 6m+ Views • 7 years ago"
+        }
+    ]
+}
